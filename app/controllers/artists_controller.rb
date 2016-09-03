@@ -23,7 +23,7 @@ def build_artist
 end
 def artist_params
   artist_params = params[:artist]
-  artist_params ? artist_params.permit(:artistname, :country, :genre, :introduction) : {}
+  artist_params ? artist_params.permit(:artistname, :country, :genre, :introduction, :avatar) : {}
 end
 
 end
