@@ -1,0 +1,14 @@
+
+<% @artists.each do |f| %>
+</br></br></br>
+<%= image_tag(f.avatar_url(:thumb2).to_s) if f.avatar %>
+<p> <label>Artist Name : </label> <%= f.artistname %> </p>
+<p> <label>  Country   : </label> <%= f.country %> </p>
+<p> <label>   Genre    : </label> <%= f.genre %> </p>
+<p> <label>Introduction:</label> <%= f.introduction %> </p>
+    <% if current_user %>
+    <%= link_to "编辑", edit_artist_path(f.id) %>,
+    <%= link_to "删除", artist_path(f.id), method: :delete %>
+    <% else %>
+    <% end %>
+<% end %>

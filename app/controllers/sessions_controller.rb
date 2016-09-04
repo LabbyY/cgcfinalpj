@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
   def new
+    build_artist
+    @artists = Artist.all
+    @current_user ||= User.find_by(id: session[:user_id])
   end
 
   def create
@@ -12,10 +15,5 @@ class SessionsController < ApplicationController
       render :new
     end
   end
-
-    def login_as(user)
-      session[:user_id] = user.id
-      @current_user = user
-    end
 
 end

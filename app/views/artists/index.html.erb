@@ -1,11 +1,9 @@
-<% @artists.each do |f| %>
-<%= image_tag(f.avatar_url(:thumb2).to_s) if f.avatar %>
-<%= f.artistname %>
-<%= f.country %>
-<%= f.genre %>
-<% end %>
-<p>No</p>
 <div>
   <h2>Add New Artist</h2>
   <%= render 'artists/form'%>
+</div>
+
+<div>
+  <h2>Artists List</h2>
+  <%= render 'artists/list' %>
 </div>
